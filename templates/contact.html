@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<article>
+    <!-- <h2>Contact</h2> -->
+
+    {% if success %}
+        <p>Thank you for your message. I'll get back to you shortly.</p>
+    {% else %}
+        {% for message in form.name.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.email.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.subject.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in form.message.errors %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+    <form action="{{ url_for('contact') }}" method=post>
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.name.label }}
+            {{ form.name }}
+        </p>
+        <p>
+            {{ form.email.label}}
+            {{ form.email}}
+        </p>
+        <p>
+            {{ form.subject.label }}
+            {{ form.subject }}
+        </p>
+        <p>
+            {{ form.message.label }}
+            {{ form.message }}
+        </p>
+        <p>
+            {{ form.submit }}
+        </p>
+
+    </form>
+    {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title -->
+    <title> {% block title %}{% endblock %} </title>
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+    <h1> Daniel Aaron Pearl </h1>
+
+    <nav class="top-nav">
+        <a class="home-nav" href='#'> HOME </a>
+        <a class="about-nav" href='../about'> ABOUT</a>
+        <a class="portfolio-nav" href='../portfolio'> PORTFOLIO</a>
+        <a class="contact-nav" href='../contact'> CONTACT </a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
