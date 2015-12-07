@@ -18,12 +18,11 @@ mail.init_app(app)
 
 @app.route("/portfolio/")
 def portfolio():
-
-    return render_template('portfolio.html')
+    return render_template('portfolio.html', portfolio="selected")
 
 @app.route("/about/")
 def about():
-    return render_template('about.html')
+    return render_template('about.html', about="selected")
 
 @app.route("/contact/", methods=['GET','POST'])
 def contact():
@@ -31,19 +30,20 @@ def contact():
 
     if request.method == "POST":
         if form.validate() == False:
+
             flash('All fields are required.')
             return render_template('contact.html', form=form)
         else:
             msg = Message(form.subject.data, sender='danielaaronpearl@gmail.com', recipients=['danielaaronpearl@gmail.com'])
-            msg = Message(form.subject.data, sender='danielaaronpearl@gmail.com', recipients=['your_email@example.com'])
+
             msg.body = """
-            From: {} <{}>
-            %s
+            From: {0} <{1}>
+            {2}
             """.format(form.name.data, form.email.data, form.message.data)
             mail.send(msg)
             return render_template('contact.html', success=True)
     elif request.method == "GET":
-        return render_template('contact.html', form=form)
+        return render_template('contact.html', form=form, contact="selected")
 
 if __name__ == '__main__':
     app.run(debug=True)

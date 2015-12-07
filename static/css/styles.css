@@ -1,6 +1,26 @@
-@media (min-width: 275px) {
-        form, form input{
+@media (max-width: 700px) {
+        form, form input, form p, form label{
             width:100%;
+        }
+        /**{
+            background-color: orange;
+        }*/
+        .daniel !important{
+            /*align: middle;*/
+            display: inline-block;
+            text-align: center;
+            /*margin-left: 100px;*/
+            /*margin-right: auto;*/
+            width:auto;
+            float:right;
+        }
+        .about{
+            display: inline-block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width:100%;
+            height:auto;
         }
 }
 /**{
@@ -11,13 +31,12 @@ body{
     background-color: black;
 }
 article{
-    /*background-image: url('../images/brick-wall-dark.png');*/
     border-radius: 100%;
     padding:20px;
-    /*margin-top: 10px;*/
 }
 label, a, p{
     color:white;
+    font-family: 'Raleway', sans-serif;
 }
 h1{
     text-align: center;
@@ -25,22 +44,25 @@ h1{
     color: white;
     font-family: 'rock salt', cursive;
 }
-h2{
-    color:#C7F464;
-    font-family: "Indie Flower", cursive;
+h2,h3{
+font-family: 'Raleway', sans-serif;
+color:#C7F464;
 }
-a{
-    text-decoration: none;
+a,li,ul{
+font-family: 'Raleway', sans-serif;
+text-decoration: none;
+    list-style-type:none;
     cursor: pointer;
 }
+web a:hover, web li:hover{
+    color: #556270;
+}
 nav{
-    height:50px;
-    padding:10px;
+    height:100%;
     display: block;
     text-align: center;
 }
 nav a{
-
     font-size: 1em;
     font-family: 'Quicksand', sans-serif;
     background-color: black;
@@ -50,23 +72,30 @@ nav a{
     color: #556270;
     text-align: center;
     border-radius:2px;
-    width:15%;
+    width:17%;
     display: inline-block;
     overflow: hidden;
 }
 
-a:hover,.selected {
+nav a:hover,.selected {
     text-shadow: 3px 3px .5em #4ECDC4;
     box-shadow: 2px 2px 10px #4ECDC4;
 
     color: #4ECDC4;
+    font-weight: bold;
 }
 
-/*.home-nav{
+a:hover{
+    color: #4ECDC4;
+    font-weight: bold;
+}
+
+.selected !important{
     text-shadow: 3px 3px .5em #4ECDC4;
     box-shadow: 2px 2px 10px #4ECDC4;
     color: #4ECDC4;
 }
+/*
 .about-nav{
     text-shadow: 3px 3px .5em #4ECDC4;
     box-shadow: 2px 2px 10px #4ECDC4;
@@ -83,15 +112,13 @@ a:hover,.selected {
     color: #4ECDC4;
 }*/
 img{
-    height:200px;
-    width:200px;
-    display: block;
-    text-align: center;
+    height:250px;
+    width:250px;
     border-radius: 3px;
-    border:solid 2px;
-    align:middle;
-    text-align: center;
+    border:solid 2px white;
+
     margin: 0 auto;
+    cursor:pointer;
 }
 
 form input#name,
@@ -103,10 +130,12 @@ form input#subject {
      -moz-border-radius: 3px;
           border-radius: 3px;
   border: 1px solid #cccccc;
-  padding: 5px;
+  /*padding: 5px;*/
   font-size: 1.1em;
 }
-form p{
+form p, .thanks, .flash{
+    width:100%;
+    display: inline-block;
     text-align: center;
 }
 form textarea#message {
@@ -123,7 +152,7 @@ form textarea#message {
 }
 
 form input#submit {
-    width: 50%;
+    width: 51.5%;
     display: block;
     -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
@@ -138,27 +167,91 @@ form input#submit {
 }
 
 form input#submit:hover{
-    width: 50%;
+    width: 51.5%;
     cursor: pointer;
-    border:1px solid #c1c1c1;
-    background-color: #dbdbdb;
+    border:1px solid #4ECDC4;
+    background-color: #4ECDC4;
 }
 
 /* Contact form */
 form label {
-    /*width:50%*/
-  font-size: 1.2em;
-  font-weight: bold;
-  display: block;
-  padding: 10px 0;
+    color: #4ECDC4;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+    margin:0px;
 }
-.about,.portfolio,.title{
+.portfolio,.title{
     width:100%;
     display: inline-block;
     text-align: center;
 }
+.about{
+    /*padding:10px;*/
+    margin-left: 20px;
+    width:60%;
+    display:inline-block;
+    text-align: left;
+    /*float: right;*/
+}
 
 .flash{
     color: #990033;
-    width: 50%;
+    width: 100%;
+}
+
+.error,.thanks{
+    /*padding:5px;*/
+    /*border:solid 2px #990033;*/
+    width:51%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 25%;
+    margin-left: 24.3%;
+    border-radius: 3px;
+}
+.web, .logos{
+    color:white;
+    padding:3px;
+}
+.web h3,.logos h3{
+    font-size: 25px;
+    color: #4ECDC4;
+    margin:5px;
+}
+.web li, .logos li{
+    padding:3px;
+    cursor: auto;
+    margin-bottom: 5px;
+}
+.romagnets,.banner,.poshdog,.overseas,.mutants,.chiapas{
+    width:auto;
+    background-color: #005F6B;
+    margin-bottom: 3px;
+    align:middle;
+    text-align: center;
+    display: block;
+
+}
+.banner{
+    height:150px;
+}
+.chiapas{
+    height: 339px;
+    width:auto;
+}
+.romagnets{
+    background-color: black;
+    height:195px;
+}
+.daniel{
+    /*height: auto;*/
+    width:auto;
+    /*align:left;*/
+    /*text-align: left;*/
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+    margin-top: 15px;
 }

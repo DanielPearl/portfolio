@@ -6,8 +6,11 @@
     <!-- <h2>Contact</h2> -->
 
     {% if success %}
-        <p>Thank you for your message. I'll get back to you shortly.</p>
+        <p class="thanks">Thank you for your message. I'll get back to you shortly.
+        </p>
     {% else %}
+        <section class="error">
+
         {% for message in form.name.errors %}
             <div class="flash">{{ message }}</div>
         {% endfor %}
@@ -23,6 +26,7 @@
         {% for message in form.message.errors %}
             <div class="flash">{{ message }}</div>
         {% endfor %}
+    </section>
 
     <form action="{{ url_for('contact') }}" method=post>
         {{ form.hidden_tag() }}

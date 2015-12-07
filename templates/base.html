@@ -10,21 +10,24 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- CSS Styles -->
     <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 </head>
 <body>
     <h1> Daniel Aaron Pearl </h1>
 
-    <nav class="top-nav">
-        <a class="home-nav" href='#'> HOME </a>
-        <a class="about-nav" href='../about'> ABOUT</a>
-        <a class="portfolio-nav" href='../portfolio'> PORTFOLIO</a>
-        <a class="contact-nav" href='../contact'> CONTACT </a>
+    <nav id="top-nav" class="top-nav">
+        <!-- <a class="home-nav" href='#'> HOME </a> -->
+        <a id="about-nav" class="{{about}}" href='../about'> ABOUT</a>
+        <a id="portfolio-nav" class="{{portfolio}}" href='../portfolio'> PORTFOLIO</a>
+        <a id="contact-nav" class="{{contact}}" href='../contact'> CONTACT </a>
     </nav>
     {% block content %}
     {% endblock %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/js/scripts.js"></script>
 </body>
 
 </html>
