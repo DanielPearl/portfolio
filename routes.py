@@ -20,6 +20,7 @@ mail.init_app(app)
 def portfolio():
     return render_template('portfolio.html', portfolio="selected")
 
+@app.route("/")
 @app.route("/about/")
 def about():
     return render_template('about.html', about="selected")
@@ -32,7 +33,7 @@ def contact():
         if form.validate() == False:
 
             flash('All fields are required.')
-            return render_template('contact.html', form=form)
+            return render_template('contact.html', form=form, contact="selected")
         else:
             msg = Message(form.subject.data, sender='danielaaronpearl@gmail.com', recipients=['danielaaronpearl@gmail.com'])
 
@@ -41,7 +42,7 @@ def contact():
             {2}
             """.format(form.name.data, form.email.data, form.message.data)
             mail.send(msg)
-            return render_template('contact.html', success=True)
+            return render_template('contact.html', success=True, contact="selected")
     elif request.method == "GET":
         return render_template('contact.html', form=form, contact="selected")
 
