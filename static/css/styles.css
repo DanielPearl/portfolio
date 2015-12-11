@@ -158,7 +158,9 @@ form label {
     color: #990033;
     width: 100%;
 }
-
+.flash:last-child{
+    margin-bottom: 10px;
+}
 .error,.thanks{
     /*padding:5px;*/
     /*border:solid 2px #990033;*/
@@ -213,7 +215,13 @@ form label {
     margin-left: 10%;
     margin-top: 15px;
 }
-
+/*@media (min-width: 1500px) {
+    .about{
+        width:65%;
+    }
+    form p{
+        margin-bottom: 30px;
+    }*/
 @media (max-width: 1000px) {
     .about{
         width:50%;
