@@ -47,4 +47,4 @@ def contact():
         return render_template('contact.html', form=form, contact="selected")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
